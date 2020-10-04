@@ -11,8 +11,8 @@ for x=1:h_ideal
         p = [y;x;1];
         m_focal_ideal = inv(K_ideal)*p;
         pd = K_reel*distorsion(m_focal_ideal, k);
-        YI(y, x) = pd(1);
-        XI(y, x) = pd(2);
+        YI(x, y) = pd(1); % j'inverse le (x,y) ca tourne de 90°
+        XI(x, y) = pd(2);
         
     end
 end
