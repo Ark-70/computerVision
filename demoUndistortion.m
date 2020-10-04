@@ -3,7 +3,7 @@ clear; close all; clc; dbstop if error;
 
 %% Load ideal parameters
 
-K_ideal = [480 0 826; 0 480 461; 0 0 1];
+K_ideal = [480 0 826; 0 480 461; 0 0 1]; % le K ((taux de distorsion ?)) qu'on aimerait avoir
 h_ideal = 900;
 w_ideal = 1600;
 
@@ -35,13 +35,13 @@ size(YI)
 
 size(Idist)
 
-I(:,:,1) = interp2(Idist(:,:,1), XI, YI);
-I(:,:,2) = interp2(Idist(:,:,2), XI, YI);
-I(:,:,3) = interp2(Idist(:,:,3), XI, YI);
-% 
-% I(:,:,1) = interp2(Idist(:,:,1), YI, XI);
-% I(:,:,2) = interp2(Idist(:,:,2), YI, XI);
-% I(:,:,3) = interp2(Idist(:,:,3), YI, XI);
+% I(:,:,1) = interp2(Idist(:,:,1), XI, YI);
+% I(:,:,2) = interp2(Idist(:,:,2), XI, YI);
+% I(:,:,3) = interp2(Idist(:,:,3), XI, YI);
+
+I(:,:,1) = interp2(Idist(:,:,1), YI, XI);
+I(:,:,2) = interp2(Idist(:,:,2), YI, XI);
+I(:,:,3) = interp2(Idist(:,:,3), YI, XI);
 
 figure,imshow(I);
 

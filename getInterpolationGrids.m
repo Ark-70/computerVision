@@ -1,11 +1,12 @@
 function [XI,YI] = getInterpolationGrids(K_reel, k, K_ideal, h_ideal, w_ideal)
 %outputs : XI,YI grids of size h_ideal x w_ideal
 
+% on prépare des matrices d'images de taille idéale pour 
 XI = zeros(h_ideal, w_ideal);
 YI = zeros(h_ideal, w_ideal);
 
-for y=1:h_ideal
-    for x=1:w_ideal
+for x=1:h_ideal
+    for y=1:w_ideal
 
         p = [y;x;1];
         m_focal_ideal = inv(K_ideal)*p;
