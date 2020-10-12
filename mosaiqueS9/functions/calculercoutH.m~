@@ -1,0 +1,12 @@
+function cout = calculercoutH ( H, p )
+
+    % https://www.researchgate.net/post/Projector_onto_column_subspace_of_given_Matrix_A_Matlab
+
+    %% projection (Vision 3D S9.1.2)
+    
+    % je calcule des homographies pour 4 paires de points, plein plein de
+    % fois (L fois) et je garde celle qui minimise le coût
+    
+    % H * p
+
+end
